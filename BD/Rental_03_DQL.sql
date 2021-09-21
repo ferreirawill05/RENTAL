@@ -1,0 +1,22 @@
+USE RENTAL_PROJECT;
+GO
+
+SELECT * FROM EMPRESA
+
+SELECT * FROM VEICULO
+
+SELECT * FROM CLIENTE
+
+SELECT * FROM ALUGUEL
+
+
+SELECT preco, Adata, nome, sobrenome, RG, cor, placa, nomeEmpresa, endereco FROM ALUGUEL
+LEFT JOIN CLIENTE
+ON ALUGUEL.idCliente = CLIENTE.idCliente
+LEFT JOIN VEICULO
+ON ALUGUEL.idVeiculo = VEICULO.idVeiculo
+LEFT JOIN EMPRESA
+ON EMPRESA.idEmpresa = VEICULO.idEmpresa;
+
+
+SELECT cor, placa FROM VEICULO
